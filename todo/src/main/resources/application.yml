@@ -1,0 +1,20 @@
+server:
+  port: 64412
+
+spring:
+  application:
+    name: todo-service
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+eureka:
+  instance:
+    instance-id: todo-microservice-instance
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka

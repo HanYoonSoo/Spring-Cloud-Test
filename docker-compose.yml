@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  discovery:
+    container_name: discovery-service
+    image: hanyoonsoo/discovery-service:1.0
+    hostname: discovery-service
+    ports:
+      - "8761:8761"
+
+  config:
+    container_name: config-server
+    image: hanyoonsoo/config-server:1.0
+    ports:
+      - "8888:8888"
+  todo:
+    container_name: todo-service
+    image: hanyoonsoo/todo-service:1.0
+    hostname: todo-service
+    ports:
+      - "64412:64412"
+  gateway:
+    container_name: gateway-service
+    image: hanyoonsoo/gateway-service:1.0
+    hostname: gateway-service
+    ports:
+      - "8000:8000"

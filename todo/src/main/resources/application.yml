@@ -6,13 +6,34 @@ spring:
     name: todo-service
 
 ---
+server:
+  port: 0
+
+spring:
+  config:
+    activate:
+      on-profile: local
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+---
+
+server:
+  port: 0
+
 spring:
   config:
     activate:
       on-profile: docker
 eureka:
   instance:
-    instance-id: todo-microservice-instance
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     register-with-eureka: true
     fetch-registry: true

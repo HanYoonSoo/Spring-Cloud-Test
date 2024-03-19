@@ -33,4 +33,9 @@ public class TodoController {
                 .status(HttpStatus.ACCEPTED)
                 .body(todoService.deleteTodo(id));
     }
+
+    @GetMapping("/verison")
+    public String version(){
+        return "version3";
+    }
 }

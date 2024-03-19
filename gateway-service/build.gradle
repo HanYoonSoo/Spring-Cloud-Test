@@ -34,7 +34,7 @@ dependencies {
     implementation 'io.netty:netty-resolver-dns-native-macos:4.1.68.Final:osx-aarch_64'
 
     // Spring Cloud Bus + RabbitMQ
-    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+    // implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
 
     // Spring Boot actuator
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
